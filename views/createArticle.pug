@@ -4,6 +4,19 @@ html
         link(rel="stylesheet", href="/css/styles.css")
         link(href="https://fonts.googleapis.com/css?family=Pangolin", rel="stylesheet")
     body
-        main
-            h1 Send you'r article here
-              
+        main.container
+          .row
+              h1 Send you'r article here
+              // register form
+              form(method='POST' action='/freshArticle')
+                div
+                  label(for='title') Title:
+                  input#name(type='text', placeholder='Give a title to your article' name='title')
+                div
+                  label(for='description') Description:
+                  input#favoriteBook(type='text', placeholder='Describe your article' name='description')
+                div
+                  label(for='content') Content:
+                  input#pw(type='text' name='content')
+                button(type='submit') Send
+                      

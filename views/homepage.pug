@@ -5,9 +5,15 @@ html
         link(href="https://fonts.googleapis.com/css?family=Pangolin", rel="stylesheet")
     body
         main
-            h1 bonjour
             for article in articles
-              h1 #{article.title}
+              article
+                h1 #{article.title}
+                form(method="post", action="/api/article/" + article.id + "/upvote")
+                  button(type='submit') Vote
+                
+            form(method="post", action="/api/article")
+                input#name(type='text', placeholder='Give a title to your article' name='title')
+                button(type='submit') Send
               
               
 
