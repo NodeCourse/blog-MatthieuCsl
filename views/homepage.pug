@@ -1,0 +1,41 @@
+html
+    head
+        title Welcome!
+        link(rel="stylesheet", href="/css/styles.css")
+        link(href="https://fonts.googleapis.com/css?family=Pangolin", rel="stylesheet")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css")
+    body
+        main.container
+          if user
+            h1 Welcome #{user.fullname}!
+          else
+
+            h1 Welcome Friend!
+            .row
+              div.col.s12.m6
+                div.card.blue-grey.darken-1
+                  div.card-content.white-text
+                    h2.card-title Create an account
+                        form(method="post", action="/api/user")
+                          div
+                            input#fullname(type='text', placeholder='fullname' name='fullname')
+                          div.form-group
+                            input#email.form-control(type='email', placeholder='name@email.com' name='email')
+                          div.form-group
+                            input#pw.form-control(type='password', placeholder='password' name='password')
+                          div
+                            button.waves-effect.waves-light.btn(type='submit') Sign up
+              
+              div.col.s12.m6
+                div.card.blue-grey.darken-1
+                  div.card-content.white-text
+                    h2.card-title Already registered?
+                        form(method="post", action="/homepage")
+                          div
+                            input#fullname(type='text', placeholder='fullname' name='username')
+                          div.form-group
+                            input#pw.form-control(type='password', placeholder='password' name='password')
+                          div
+                            p Forgot your email/username or password?
+                          div
+                            button.waves-effect.waves-light.btn(type='submit') Sign in
