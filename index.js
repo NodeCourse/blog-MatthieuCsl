@@ -66,6 +66,11 @@ app.get('/bienvenu', (req,res) => {
       res.render('bienvenu', { user: req.user });
 });
 
+app.get('/logout', (req, res) => {
+  req.logout();
+  res.redirect('/');
+});
+
 //creation de la route post pour un user
 app.post('/api/user', (req, res) => {
   const fullname = req.body.fullname;

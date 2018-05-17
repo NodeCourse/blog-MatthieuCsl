@@ -31,8 +31,8 @@ html
                   div.card-content.white-text
                     h2.card-title Already registered?
                         form(method="post", action="/homepage")
-                          div
-                            input#fullname(type='text', placeholder='fullname' name='username')
+                          div.form-group
+                            input#email.form-control(type='email', placeholder='name@email.com' name='username')
                           div.form-group
                             input#pw.form-control(type='password', placeholder='password' name='password')
                           div
